@@ -1,0 +1,3 @@
+/Users/mavri/Documents/Pr/sasha/cmake-build-debug/CMakeFiles/sasha.dir
+/Users/mavri/Documents/Pr/sasha/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/mavri/Documents/Pr/sasha/cmake-build-debug/CMakeFiles/rebuild_cache.dir
