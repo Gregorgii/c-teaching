@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include <cmath>
 #include <array>
 using namespace sf;
@@ -42,7 +43,6 @@ int main()
     sf::RenderWindow window(sf::VideoMode(400, 400), "SFML works!");
 
 
-
     while (window.isOpen())
     {
         sf::Event event{};
@@ -53,43 +53,71 @@ int main()
         }
 
         window.clear();
+        Vector2<int> localPosition = Mouse::getPosition(window);
+
+        if (Mouse::isButtonPressed(Mouse::Left))
+        {
+            window.draw(genKrest(localPosition.x, 50.f)[0]);
+            window.draw(genKrest(localPosition.x, 50.f)[1]);
+
+            window.draw(genKrest(200.f, 50.f)[0]);
+            window.draw(genKrest(200.f, 50.f)[1]);
+
+            window.draw(genKrest(350.f, 50.f)[0]);
+            window.draw(genKrest(350.f, 50.f)[1]);
+        }
+
+
+
+
+
         window.draw(genPole()[0]);
         window.draw(genPole()[1]);
         window.draw(genPole()[2]);
         window.draw(genPole()[3]);
 
-        window.draw(genKrest(50.f, 50.f)[0]);
-        window.draw(genKrest(50.f, 50.f)[1]);
+//        window.draw(genKrest(50.f, 50.f)[0]);
+//        window.draw(genKrest(50.f, 50.f)[1]);
+//
+//        window.draw(genKrest(200.f, 50.f)[0]);
+//        window.draw(genKrest(200.f, 50.f)[1]);
+//
+//        window.draw(genKrest(350.f, 50.f)[0]);
+//        window.draw(genKrest(350.f, 50.f)[1]);
 
-        window.draw(genKrest(200.f, 50.f)[0]);
-        window.draw(genKrest(200.f, 50.f)[1]);
-
-        window.draw(genKrest(350.f, 50.f)[0]);
-        window.draw(genKrest(350.f, 50.f)[1]);
-
-
-
-
-        window.draw(genKrest(50.f, 200.f)[0]);
-        window.draw(genKrest(50.f, 200.f)[1]);
-
-        window.draw(genKrest(200.f, 200.f)[0]);
-        window.draw(genKrest(200.f, 200.f)[1]);
-
-        window.draw(genKrest(350.f, 200.f)[0]);
-        window.draw(genKrest(350.f, 200.f)[1]);
-
-
-
-
-        window.draw(genKrest(50.f, 350.f)[0]);
-        window.draw(genKrest(50.f, 350.f)[1]);
-
-        window.draw(genKrest(200.f, 350.f)[0]);
-        window.draw(genKrest(200.f, 350.f)[1]);
-
-        window.draw(genKrest(350.f, 350.f)[0]);
-        window.draw(genKrest(350.f, 350.f)[1]);
+//        CircleShape circ1(60);
+//        circ1.setPosition(Vector2f(0, 0));
+//        window.draw(circ1);
+//
+//        CircleShape circ2(60);
+//        circ2.setPosition(Vector2f(140, 0));
+//        window.draw(circ2);
+//
+//        CircleShape circ3(60);
+//        circ3.setPosition(Vector2f(280, 0));
+//        window.draw(circ3);
+//
+//
+//        window.draw(genKrest(50.f, 200.f)[0]);
+//        window.draw(genKrest(50.f, 200.f)[1]);
+//
+//        window.draw(genKrest(200.f, 200.f)[0]);
+//        window.draw(genKrest(200.f, 200.f)[1]);
+//
+//        window.draw(genKrest(350.f, 200.f)[0]);
+//        window.draw(genKrest(350.f, 200.f)[1]);
+//
+//
+//
+//
+//        window.draw(genKrest(50.f, 350.f)[0]);
+//        window.draw(genKrest(50.f, 350.f)[1]);
+//
+//        window.draw(genKrest(200.f, 350.f)[0]);
+//        window.draw(genKrest(200.f, 350.f)[1]);
+//
+//        window.draw(genKrest(350.f, 350.f)[0]);
+//        window.draw(genKrest(350.f, 350.f)[1]);
         window.display();
     }
 
