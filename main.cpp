@@ -19,6 +19,14 @@ RectangleShape * genKrest(float x, float y) {
     return r;
 }
 
+CircleShape genCircle(float x, float y) {
+    CircleShape circle;
+    circle.setRadius(60);
+    circle.setFillColor(Color::Blue);
+    circle.setPosition(x, y);
+    return circle;
+}
+
 RectangleShape * genPole(){
     static RectangleShape  r[4];
     RectangleShape line1(Vector2f(400, 1));
@@ -65,6 +73,8 @@ int main()
 
             window.draw(genKrest(350.f, 50.f)[0]);
             window.draw(genKrest(350.f, 50.f)[1]);
+
+            window.draw(genCircle(200.f-60, 200.f-60));
         }
 
 
